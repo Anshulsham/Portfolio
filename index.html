@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" style="scroll-behavior: smooth; scroll-padding-top: 80px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshul | Modern Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-top: #000000;
+            --bg-bottom: #020617;
+            --grid-blue: rgba(14, 165, 233, 0.4);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-top);
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Custom Scrollbar - kept hidden for the "slideshow" feel */
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+
+        /* --- HALF BLACK HALF BLUE 3D GRID BACKGROUND --- */
+        .world-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--bg-top);
+            overflow: hidden;
+        }
+
+        /* Top Half (Black) */
+        .sky {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, #000 0%, #000814 100%);
+        }
+
+        /* Bottom Half (Blue Grid) */
+        .ground {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: #020617;
+            perspective: 600px;
+        }
+
+        .grid-3d {
+            position: absolute;
+            top: -100%;
+            left: -50%;
+            width: 200%;
+            height: 400%;
+            background-image: 
+                linear-gradient(var(--grid-blue) 1.5px, transparent 1.5px),
+                linear-gradient(90deg, var(--grid-blue) 1.5px, transparent 1.5px);
+            background-size: 80px 80px;
+            transform: rotateX(60deg);
+            animation: move-forward 10s linear infinite;
+            mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+        }
+
+        @keyframes move-forward {
+            0% { transform: rotateX(60deg) translateY(0); }
+            100% { transform: rotateX(60deg) translateY(80px); }
+        }
+
+        /* Atmosphere Glow */
+        .atmosphere {
+            position: absolute;
+            top: 30%;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 80%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+        }
+
+        /* Noise Texture */
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            opacity: 0.015;
+            pointer-events: none;
+            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+        }
+
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/"
+      }
+    }
+    </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="selection:bg-sky-500/30">
+    <!-- Sophisticated Horizon Background -->
+    <div class="world-container">
+        <div class="sky"></div>
+        <div class="ground">
+            <div class="grid-3d"></div>
+        </div>
+        <div class="atmosphere"></div>
+    </div>
+    
+    <div class="noise"></div>
+    <div id="root"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            const checkSections = setInterval(() => {
+                const sections = document.querySelectorAll('section');
+                if (sections.length > 0) {
+                    sections.forEach(s => observer.observe(s));
+                    clearInterval(checkSections);
+                }
+            }, 100);
+        });
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
