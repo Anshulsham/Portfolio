@@ -109,6 +109,16 @@ export const PROJECTS: EnhancedProject[] = [
     image: "/airveda.jpg",
     github: "https://github.com/Anshulsham/Hawa-e-saaf",
     demo: "https://hawa-e-saaf.netlify.app/"
+  },
+  {
+    id: 5,
+    title: "InterviewPlatform",
+    description: "A MERN full-stack interview platform featuring WebRTC video rooms, Google-auth protected session links, candidate profile management, collaborative code editor & notes, and Stripe subscription billing.",
+    tags: ["React", "Vite", "Redux Toolkit", "Express.js", "MongoDB", "Socket.IO", "Redis", "Stripe", "WebRTC", "Google Auth"],
+    link: "",
+    image: "/interview-platform.png",
+    github: "https://github.com/Anshulsham/InterviewPlatform",
+    demo: ""
   }
 ];
 
