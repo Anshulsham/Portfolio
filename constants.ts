@@ -86,7 +86,7 @@ export const PROJECTS: EnhancedProject[] = [
     description: "A responsive news aggregation platform that fetches real-time news articles from the GNews API, offering category-based navigation and keyword search with Redux state management.",
     tags: ["React", "Redux", "Redux Thunk", "Axios", "Bootstrap", "Styled Components", "GNews API"],
     link: "https://newslv.netlify.app/",
-    image: "/newsnexus.png",
+    image: "/newsnexus.jpg",
     github: "https://github.com/Anshulsham/NewsNexus",
     demo: "https://newslv.netlify.app/"
   },
@@ -106,7 +106,7 @@ export const PROJECTS: EnhancedProject[] = [
     description: "A static web-based air quality tracking application that displays real-time pollution levels, interactive Leaflet map overlays, AQI health tips, and historical charts using OpenWeatherMap APIs.",
     tags: ["HTML5", "CSS3", "JavaScript", "Leaflet.js", "Chart.js", "OpenWeatherMap API", "Nominatim API", "LocalStorage"],
     link: "https://hawa-e-saaf.netlify.app/",
-    image: "/airveda.png",
+    image: "/airveda.jpg",
     github: "https://github.com/Anshulsham/Hawa-e-saaf",
     demo: "https://hawa-e-saaf.netlify.app/"
   }
