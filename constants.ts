@@ -82,13 +82,13 @@ export const PROJECTS: EnhancedProject[] = [
   },
   {
     id: 2,
-    title: "NewsNexus",
-    description: "A responsive news aggregation platform that fetches real-time news articles from the GNews API, offering category-based navigation and keyword search with Redux state management.",
-    tags: ["React", "Redux", "Redux Thunk", "Axios", "Bootstrap", "Styled Components", "GNews API"],
-    link: "https://newslv.netlify.app/",
-    image: "/newsnexus.jpg",
-    github: "https://github.com/Anshulsham/NewsNexus",
-    demo: "https://newslv.netlify.app/"
+    title: "InterviewPlatform",
+    description: "A MERN full-stack interview platform featuring WebRTC video rooms, Google-auth protected session links, candidate profile management, collaborative code editor & notes, and Stripe subscription billing.",
+    tags: ["React", "Vite", "Redux Toolkit", "Express.js", "MongoDB", "Socket.IO", "Redis", "Stripe", "WebRTC", "Google Auth"],
+    link: "",
+    image: "/interview-platform.png",
+    github: "https://github.com/Anshulsham/InterviewPlatform",
+    demo: ""
   },
   {
     id: 3,
@@ -102,6 +102,16 @@ export const PROJECTS: EnhancedProject[] = [
   },
   {
     id: 4,
+    title: "NewsNexus",
+    description: "A responsive news aggregation platform that fetches real-time news articles from the GNews API, offering category-based navigation and keyword search with Redux state management.",
+    tags: ["React", "Redux", "Redux Thunk", "Axios", "Bootstrap", "Styled Components", "GNews API"],
+    link: "https://newslv.netlify.app/",
+    image: "/newsnexus.jpg",
+    github: "https://github.com/Anshulsham/NewsNexus",
+    demo: "https://newslv.netlify.app/"
+  },
+  {
+    id: 5,
     title: "AirVeda",
     description: "A static web-based air quality tracking application that displays real-time pollution levels, interactive Leaflet map overlays, AQI health tips, and historical charts using OpenWeatherMap APIs.",
     tags: ["HTML5", "CSS3", "JavaScript", "Leaflet.js", "Chart.js", "OpenWeatherMap API", "Nominatim API", "LocalStorage"],
@@ -109,16 +119,6 @@ export const PROJECTS: EnhancedProject[] = [
     image: "/airveda.jpg",
     github: "https://github.com/Anshulsham/Hawa-e-saaf",
     demo: "https://hawa-e-saaf.netlify.app/"
-  },
-  {
-    id: 5,
-    title: "InterviewPlatform",
-    description: "A MERN full-stack interview platform featuring WebRTC video rooms, Google-auth protected session links, candidate profile management, collaborative code editor & notes, and Stripe subscription billing.",
-    tags: ["React", "Vite", "Redux Toolkit", "Express.js", "MongoDB", "Socket.IO", "Redis", "Stripe", "WebRTC", "Google Auth"],
-    link: "",
-    image: "/interview-platform.png",
-    github: "https://github.com/Anshulsham/InterviewPlatform",
-    demo: ""
   }
 ];
 
